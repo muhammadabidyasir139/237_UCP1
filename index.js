@@ -24,7 +24,7 @@ app.get("/films", async (req, res) => {
   }
 });
 
-app.put("/film:id", async (req, res) => {
+app.put("/film/:id", async (req, res) => {
   const id = req.params.id;
   const data = req.body;
 
