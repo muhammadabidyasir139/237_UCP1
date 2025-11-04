@@ -1,14 +1,15 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../config/config");
-
-const Film = sequelize.define(
-  "Film",
-  {
+module.exports = (sequelize, DataTypes) => {
+  const Film = sequelize.define("Film", {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     nama_film: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    deskripsi: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -20,19 +21,10 @@ const Film = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    sutradara: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     genre: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  },
-  {
-    tableName: "users",
-    timestamps: false,
-  }
-);
-
-module.exports = User;
+  });
+  return Komik;
+};
